@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>—</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Comfortaa:wght@300..700&family=Loved+by+the+King&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Loved+by+the+King&display=swap" rel="stylesheet">
+<style>
+body {
+  background-color: #0f1512;
+  color: #cfe6d6;
+  font-family: "Libre Franklin", sans-serif;
+  margin: 0;
+  padding: 60px;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+/* --- OVERLAY --- */
+#whisper {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 8, 7, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  z-index: 9999;
+}
+
+#whisper.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.note {
+  background: #0b120f;
+  border: 1px solid #1f332a;
+  padding: 30px;
+  max-width: 460px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.7);
+  animation: appear 0.4s ease;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.leaferboy {
+  font-family: "Loved by the King", cursive;
+  color: #6fdc9a;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.soft {
+  font-family: "Comfortaa", sans-serif;
+  color: #cbe6d8;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.fade {
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.burn {
+  animation: burnAway 2.2s forwards;
+}
+
+@keyframes burnAway {
+  0% { opacity: 1; filter: brightness(1); }
+  60% { opacity: 0.6; filter: brightness(1.3); }
+  100% { opacity: 0; filter: blur(3px); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>System Idle</h1>
+  <p>Input is being monitored.</p>
+</div>
+
+<div id="whisper">
+  <div class="note" id="noteBox"></div>
+</div>
+
+<script>
+let buffer = "";
+let active = false;
+
+const messages = {
+  l34fii: `
+    <div class="leaferboy">oh. hey.<br>
+      you shouldn’t be worrying about that.<br>
+      it’s not hurting you.<br><br>
+      i promise i know what i’m doing.<br>
+      you can trust me, yeah?
+    </div>
+  `,
+  leafless: `
+    <div class="leaferboy">ah.<br>
+      you’re still here.<br>
+      that’s… good, i think.<br><br>
+      don’t go poking around things that don’t belong to you.<br>
+      some roots bite back.
+    </div>
+  `
+};
+
+document.addEventListener("keydown", e => {
+  if (e.key.length === 1) {
+    buffer += e.key.toLowerCase();
+    buffer = buffer.slice(-20);
+  }
+
+  if (!active) {
+    if (buffer.includes("l34fii")) showMessage("l34fii");
+    if (buffer.includes("leafless")) showMessage("leafless");
+  }
+});
+
+function showMessage(type) {
+  const box = document.getElementById("noteBox");
+  const overlay = document.getElementById("whisper");
+
+  box.innerHTML = messages[type];
+  overlay.classList.add("show");
+  active = true;
+
+  setTimeout(() => {
+    box.classList.add("burn");
+  }, 3500);
+
+  setTimeout(() => {
+    overlay.classList.remove("show");
+    box.classList.remove("burn");
+    active = false;
+  }, 6500);
+}
+</script>
+
+</body>
+</html>
