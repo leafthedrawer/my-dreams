@@ -677,3 +677,68 @@ input,textarea {
   rotate: 15deg;
   color:#9fccfd
 }
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 12vh auto 6vh;
+}
+
+
+.search-bar input {
+  height: 44px;                 
+  width: 240px;
+  padding: 0 18px;
+  margin-bottom: 0;
+  box-sizing: border-box;                        
+  border-radius: 999px;
+  border: 1px solid #9ECAD6;
+  background-color: #fcfff8;
+  font-size: 15px;
+  color: #305669;
+  transition:
+    width 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.search-bar input::placeholder {
+  color: #8FA6A0;
+  font-style: italic;
+}
+
+
+.search-bar input:focus {
+  width: 320px;                
+  transform: scale(1.05);      
+  border-color: #547792;
+  box-shadow: 0 0 0 4px #A4CCD955;
+}
+
+.search-bar button {
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: none;
+  background-color: #8DBCC7;
+  color: #213448;
+  font-size: 14px;
+  font-family: 'Libre Franklin', sans-serif;
+  cursor: pointer;
+  transition:
+    transform 0.35s ease,
+    background-color 0.35s ease;
+}
+
+.search-bar input:focus + button {
+  transform: scale(1.05);
+}
+
+.search-bar button:hover {
+  background-color: #748DAE;
+  color: #EBFFD8;
+}
+
