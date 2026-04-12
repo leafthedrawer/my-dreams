@@ -1,308 +1,708 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyDreams - Blogs</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Loved+by+the+King&display=swap" rel="stylesheet">
-</head>
-<body>
+    <!DOCTYPE html>
+    <html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MyDreams - Tất Cả Blogs</title>
 
-<nav>
-    <div class="logo"><a href="index.html">MyDreams</a></div>
-    <ul>
-        <li><a href="index.html">Trang chủ</a></li>
-        <li><a href="blogs.html">Blogs</a></li>
-        <li><a href="posting.html">Đăng blog</a></li>
-        <li><a href="library.html">Thư viện ảnh</a></li>
-        <li><a href="contacts.html">Liên hệ</a></li>
-        <li class="login-box">
-            <a href="login.html">Đăng nhập</a>
-            <a href="register.html">Đăng ký</a>
-        </li>
-    </ul>
-</nav>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
 
+    <body class="dream-bg">
 
+    <nav class="navbar navbar-expand-lg dream-nav">
+        <div class="container d-flex flex-column flex-lg-row align-items-center">
+            <a class="navbar-brand fw-bold text-white fs-2 mb-2 mb-lg-0" href="index.html">MyDreams</a>
+            
+            <div class="ms-auto">
+                <ul class="navbar-nav d-flex flex-row gap-3 gap-lg-4 text-center align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="blogs.html">
+                            <img src="icons/blog.png" class="nav-icon" alt="Blogs">
+                            <br>
+                            <small>Blogs</small>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="posting.html">
+                            <img src="icons/post.png" class="nav-icon" alt="Đăng bài">
+                            <br>
+                            <small>Đăng bài</small>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="library.html">
+                            <img src="icons/lib.png" class="nav-icon" alt="Thư viện">
+                            <br>
+                            <small>Thư viện ảnh</small>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <div class="position-relative d-inline-block">
+                            <img src="icons/msg.png" class="nav-icon" alt="Tin nhắn">
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                99+
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
+                            </div>
+                            <br>
+                            <small>Tin nhắn</small>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item dropdown dream-dropdown">
+                        <a class="nav-link" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="icons/user.png" class="nav-icon" alt="Tài khoản">
+                            <br>
+                            <small>Tài khoản</small>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg py-2 px-1" aria-labelledby="accountDropdown">
+                            <li>
+                                <a class="dropdown-item rounded mt-1" href="register.html">
+                                    <i class="bi bi-person-plus-fill me-2 text-pink"></i> Đăng ký
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item rounded" href="login.html">
+                                    <i class="bi bi-box-arrow-in-right me-2 text-pink"></i> Đăng nhập
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<div class="container" style="--i:1">
-    <h2>Danh sách các bài đăng</h2>
-    <div class="search-bar">
-    <form class="search-bar">
-      <input type="text" placeholder="Tìm kiếm blog...">
-      <button type="submit">Tìm kiếm</button>
-    </form>
-  </div>
-    <div class="grid-uploads">
-        <div class="uploads">
-            <img src="assets/Aster.jpg" alt="Aster">
-            <h3>Bài đăng của *~✰</h3>
-            <span class="short-desc">Xin chào! Tớ nghĩ lên đây sẽ gặp được nhiều bạn :D</span><br>
-            <span class="post-date">2 tiếng trước</span>
-            <a href='page/aster.html' class="btn-check">Xem thử</a>
+    <header class="container my-5 position-relative text-center">
+        <div class="ribbon-container mx-auto">
+            <img src="icons/angelleft.gif" class="angel angel-left d-none d-md-block" alt="angel">
+            <div class="ribbon-box">
+                <h2 class="ribbon-text">Những bài đăng trong cộng động MyDreams..</h2>
+            </div>
+            <img src="icons/angelright.gif" class="angel angel-right d-none d-md-block" alt="angel">
         </div>
-        <div class="uploads">
-            <img src="assets/871.jpg" alt="871">
-            <h3>Bài đăng của Fern</h3>
-            <span class="short-desc">Tớ thích cây cối :P</span><br>
-            <span class="post-date">4 tiếng trước</span>
-            <a href='#' class="btn-check">Xem thử</a>
-        </div>
-        <div class="uploads">
-            <img src="assets/T7.jpg" alt="Ảnh bài đăng">
-            <h3>Bài đăng của T7</h3>
-            <span class="short-desc">...</span><br>
-            <span class="post-date">4 tiếng trước</span>
-            <a href='#' class="btn-check">Xem thử</a>
-        </div>
-        <div class="uploads">
-            <img src="assets/762.jpg" alt="762">
-            <h3>Bài đăng của 762</h3>
-            <span class="short-desc">Em tớ kêu vào đây chơi nên uhh.. hi.</span><br>
-            <span class="post-date">7 tiếng trước</span>
-            <a href='#' class="btn-check">Xem thử</a>
-        </div>
-        <div class="uploads">
-            <img src="assets/575.jpg" alt="575">
-            <h3>Bài đăng của 575</h3>
-            <span class="short-desc">meow ≽^•⩊•^≼</span><br>
-            <span class="post-date">8 tiếng trước</span>
-            <a href='#' class="btn-check">Xem thử</a>
-        </div>
+    </header>
 
-        <div class="uploads">
-          <img src="assets/TC.png" alt="TC">  
-          <h3>Bài đăng của cone</h3>
-          <span class="short-desc">traffic cones works</span><br>
-          <span class="post-date">12 tiếng trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
-
-        <div class="uploads">
-          <img src="assets/placeholder.jpg" alt="placeholder">
-          <h3>Bài đăng của Placingtheholder</h3>
-          <span class="short-desc">I walked into a room and forgot why.</span><br>
-          <span class="post-date">14 tiếng trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
-
-        <div class="uploads">
-          <img src="assets/Chromette_old.png" alt="Chromette">
-          <h3>Bài đăng của chromette</h3>
-          <span class="short-desc">Vẽ linh tinh cả buổi chiều.</span><br>
-          <span class="post-date">15 tiếng trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
-
-        <div class="uploads">
-          <img src="assets/artful.jpg" alt="artful">
-          <h3>Bài đăng của ♫⋆｡♪ ₊˚♬ ﾟ.</h3>
-          <span class="short-desc">đừng ném vỏ chuối nữa /_ \</span><br>
-          <span class="post-date">17 tiếng trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
+    <div class="container py-2 mb-5">
+        
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-5 p-4 featured-container">
+            <h2 class="section-title mb-3 mb-md-0">Danh sách các bài đăng</h2>
+            
+            <form class="d-flex w-100 search-wrapper" style="max-width: 400px;">
+                <input class="form-control dream-search px-4 py-2 rounded-pill" type="search" placeholder="Tìm kiếm blog..." aria-label="Search">
+                <button class="btn btn-dream rounded-pill ms-2 px-4" type="submit"><i class="bi bi-search"></i></button>
+            </form>
         </div>
 
-        <div class="uploads">
-          <img src="assets/bread.jpg" alt="breadlover">
-          <h3>Bài đăng của breadlover</h3>
-          <span class="short-desc">bread is love bread is life</span><br>
-          <span class="post-date">19 tiếng trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
-        <div class="uploads">
-          <img src="assets/Aster.jpg" alt="aster">
-          <h3>Bài đăng của *~✰</h3>
-          <span class="short-desc">Dusty :D</span><br>
-          <span class="post-date">19 tiếng trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
-        <div class="uploads">
-          <img src="assets/placeholder.jpg" alt="placeholder">
-          <h3>Bài đăng của Placingtheholder</h3>
-          <span class="short-desc">Rain looks like screen glitches today.</span><br>
-          <span class="post-date">19 tiếng trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/Aster_sketch.jpg" class="img-fluid rounded" alt="Aster">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Introduction</span>
+                    <h3 class="post-title">Giới thiệu</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/acter.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">*~✰</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">2 tiếng trước</small>
+                    </div>
+                    <p class="post-excerpt">Xin chào! Tớ nghĩ lên đây sẽ gặp được nhiều bạn!!</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 42</span>
+                        <span><i class="bi bi-eye-fill"></i> 128</span>
+                        <span><i class="bi bi-chat-fill"></i> 5</span>
+                    </div>
+                    <a href='page/aster.html' class="btn btn-sm btn-dream mt-auto align-self-start">Xem bài</a>
+                </div>
+            </div>
 
-        <div class="uploads">
-          <img src="assets/bread.jpg" alt="breadlover">
-          <h3>Bài đăng của breadlover</h3>
-          <span class="short-desc">Bánh mì nướng + bơ = chân lý.</span><br>
-          <span class="post-date">1 ngày trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/871.jpg" class="img-fluid rounded" alt="871">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Opinion</span>
+                    <h3 class="post-title">Ý kiến về cây</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/871.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">ferniestboy</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">4 tiếng trước</small>
+                    </div>
+                    <p class="post-excerpt">Tớ thích cây cối :P. Thật ra thì tớ cũng có một số cây cùng tớ..</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 15</span>
+                        <span><i class="bi bi-eye-fill"></i> 89</span>
+                        <span><i class="bi bi-chat-fill"></i> 2</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem bài</a>
+                </div>
+            </div>
 
-        <div class="uploads">
-          <img src="assets/monica.png" alt="monica">
-          <h3>Bài đăng của monica</h3>
-          <span class="short-desc">Silence is kinda loud today.</span><br>
-          <span class="post-date">1 ngày trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/T7.jpg" class="img-fluid rounded" alt="T7">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Randoms</span>
+                    <h3 class="post-title">untitled</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/T7.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">T7</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">4 tiếng trước</small>
+                    </div>
+                    <p class="post-excerpt">...</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 7</span>
+                        <span><i class="bi bi-eye-fill"></i> 45</span>
+                        <span><i class="bi bi-chat-fill"></i> 0</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem bài</a>
+                </div>
+            </div>
 
-        <div class="uploads">
-          <img src="assets/latte.jpg" alt="latte">
-          <h3>Bài đăng của latte_enjoyer</h3>
-          <span class="short-desc">Hôm nay lần đầu tiên thử trà. Nên quay lại với latte</span><br>
-          <span class="post-date">1 ngày trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/cat.jpg" class="img-fluid rounded" alt="575">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Randoms</span>
+                    <h3 class="post-title">Mèo mới</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/575.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">575</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">8 tiếng trước</small>
+                    </div>
+                    <p class="post-excerpt">Mới có con mèo ≽^•⩊•^≼</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 210</span>
+                        <span><i class="bi bi-eye-fill"></i> 540</span>
+                        <span><i class="bi bi-chat-fill"></i> 12</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem bài</a>
+                </div>
+            </div>
 
-        <div class="uploads">
-          <img src="assets/cat.jpg" alt="cat">
-          <h3>Bài đăng của mossy</h3>
-          <span class="short-desc">Found a cool tie. Keeping it.</span><br>
-          <span class="post-date">1 ngày trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/Twins_bondingtime.png" class="img-fluid rounded" alt="762">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Randoms</span>
+                    <h3 class="post-title">Recreating hour of joy.</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/762.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">S-762</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">12 tiếng trước</small>
+                    </div>
+                    <p class="post-excerpt">Storytime: My sister annoyed me while I was gaming so I'm gonna murder her.</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 34</span>
+                        <span><i class="bi bi-eye-fill"></i> 112</span>
+                        <span><i class="bi bi-chat-fill"></i> 4</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem bài</a>
+                </div>
+            </div>
 
-        <div class="uploads">
-          <img src="assets/artful.jpg" alt="artful">
-          <h3>Bài đăng của ♫⋆｡♪ ₊˚♬ ﾟ.</h3>
-          <span class="short-desc">Ở một mình một chút cũng ổn :,D</span><br>
-          <span class="post-date">1 ngày trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/curtains.jpg" class="img-fluid rounded" alt="curtains">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Annoucments</span>
+                    <h3 class="post-title">Upcoming Magic Show</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/artful.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">♫⋆｡♪ ₊˚♬ ﾟ.</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">13 tiếng trước</small>
+                    </div>
+                    <p class="post-excerpt">Will be in theatres in ██/██/████!</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 500+</span>
+                        <span><i class="bi bi-eye-fill"></i> 1.2k</span>
+                        <span><i class="bi bi-chat-fill"></i> 87</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem bài</a>
+                </div>
+            </div>
 
-        <div class="uploads">
-          <img src="assets/emu.jpg" alt="emu">
-          <h3>Bài đăng của wonderhoyer</h3>
-          <span class="short-desc">Wonderhoy! ✰</span><br>
-          <span class="post-date">1 ngày trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/TC.png" class="img-fluid rounded" alt="TC">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Randoms</span>
+                    <h3 class="post-title">Bài đăng của cone</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/TC.png" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">cone</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">12 tiếng trước</small>
+                    </div>
+                    <p class="post-excerpt">traffic cones works</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 56</span>
+                        <span><i class="bi bi-eye-fill"></i> 200</span>
+                        <span><i class="bi bi-chat-fill"></i> 1</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem thử</a>
+                </div>
+            </div>
 
-        <div class="uploads">
-          <img src="assets/axlirint.jpg" alt="axlirint">
-          <h3>Bài đăng của AXEMENTIONED</h3>
-          <span class="short-desc">Làm thế nào để đổi tên???</span><br>
-          <span class="post-date">2 ngày trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/placeholder.jpg" class="img-fluid rounded" alt="placeholder">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Thoughts</span>
+                    <h3 class="post-title">Bài đăng của Placingtheholder</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/placeholder.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">Placingtheholder</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">14 tiếng trước</small>
+                    </div>
+                    <p class="post-excerpt">I walked into a room and forgot why.</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 30</span>
+                        <span><i class="bi bi-eye-fill"></i> 150</span>
+                        <span><i class="bi bi-chat-fill"></i> 2</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem thử</a>
+                </div>
+            </div>
 
-        <div class="uploads">
-          <img src="assets/bocchi.jpg" alt="bocchi">
-          <h3>Bài đăng của Azukiiiiiiiii!! </h3>
-          <span class="short-desc">Is anyone else hearing this?</span><br>
-          <span class="post-date">2 ngày trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/Chromette_old.png" class="img-fluid rounded" alt="chromette">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Art</span>
+                    <h3 class="post-title">Bài đăng của chromette</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/Chromette_old.png" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">chromette</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">15 tiếng trước</small>
+                    </div>
+                    <p class="post-excerpt">Vẽ linh tinh cả buổi chiều.</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 112</span>
+                        <span><i class="bi bi-eye-fill"></i> 340</span>
+                        <span><i class="bi bi-chat-fill"></i> 18</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem thử</a>
+                </div>
+            </div>
 
-        <div class="uploads">
-          <img src="assets/friends.jpg" alt="friends">
-          <h3>Bài đăng của myfriendsareso_c00l</h3>
-          <span class="short-desc">Hôm nay đi chơi với các cậu thật vui!</span><br>
-          <span class="post-date">2 ngày trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/bread.jpg" class="img-fluid rounded" alt="breadlover">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Food</span>
+                    <h3 class="post-title">Bài đăng của breadlover</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/bread.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">breadlover</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">19 tiếng trước</small>
+                    </div>
+                    <p class="post-excerpt">bread is love bread is life</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 1.5k</span>
+                        <span><i class="bi bi-eye-fill"></i> 3.2k</span>
+                        <span><i class="bi bi-chat-fill"></i> 88</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem thử</a>
+                </div>
+            </div>
 
-        <div class="uploads">
-          <img src="assets/sayori.jpg" alt="sayori">
-          <h3>Bài đăng của soft_st4tic</h3>
-          <span class="short-desc">Today is very… normal.</span><br>
-          <span class="post-date">2 ngày trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/Aster.jpg" class="img-fluid rounded" alt="aster">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Randoms</span>
+                    <h3 class="post-title">Bài đăng của *~✰</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/acter.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">*~✰</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">19 tiếng trước</small>
+                    </div>
+                    <p class="post-excerpt">Dusty :D</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 34</span>
+                        <span><i class="bi bi-eye-fill"></i> 112</span>
+                        <span><i class="bi bi-chat-fill"></i> 4</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem thử</a>
+                </div>
+            </div>
 
-        <div class="uploads">
-          <img src="assets/mizuki.jpg" alt="mizuki">
-          <h3>Bài đăng của m1zuk1_k1nn13</h3>
-          <span class="short-desc">Gấp hạc giấy rồi để quên trong lớp (┬┬﹏┬┬)</span><br>
-          <span class="post-date">2 ngày trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/placeholder.jpg" class="img-fluid rounded" alt="placeholder">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Thoughts</span>
+                    <h3 class="post-title">Bài đăng của Placingtheholder</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/placeholder.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">Placingtheholder</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">19 tiếng trước</small>
+                    </div>
+                    <p class="post-excerpt">Rain looks like screen glitches today.</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 25</span>
+                        <span><i class="bi bi-eye-fill"></i> 90</span>
+                        <span><i class="bi bi-chat-fill"></i> 1</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem thử</a>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/bread.jpg" class="img-fluid rounded" alt="breadlover">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Food</span>
+                    <h3 class="post-title">Bài đăng của breadlover</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/bread.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">breadlover</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">1 ngày trước</small>
+                    </div>
+                    <p class="post-excerpt">Bánh mì nướng + bơ = chân lý.</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 900</span>
+                        <span><i class="bi bi-eye-fill"></i> 1.1k</span>
+                        <span><i class="bi bi-chat-fill"></i> 45</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem thử</a>
+                </div>
+            </div>
 
-        <div class="uploads">
-          <img src="assets/pursuerms.jpg" alt="mnms">
-          <h3>Bài đăng của pursua</h3>
-          <span class="short-desc">Ahh fresh m&ms</span><br>
-          <span class="post-date">2 ngày trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/monica.png" class="img-fluid rounded" alt="monica">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Thoughts</span>
+                    <h3 class="post-title">Bài đăng của monica</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/monica.png" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">monica</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">1 ngày trước</small>
+                    </div>
+                    <p class="post-excerpt">Silence is kinda loud today.</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 140</span>
+                        <span><i class="bi bi-eye-fill"></i> 420</span>
+                        <span><i class="bi bi-chat-fill"></i> 12</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem thử</a>
+                </div>
+            </div>
 
-        <div class="uploads">
-          <img src="assets/chuuya.jpg" alt="chuuya">
-          <h3>Bài đăng của hatrack</h3>
-          <span class="short-desc">"Nếu thấy rát thì đừng chạm"- một bài học mà thằng bạn tôi cần biết 💔</span><br>
-          <span class="post-date">3 ngày trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/latte.jpg" class="img-fluid rounded" alt="latte">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Randoms</span>
+                    <h3 class="post-title">Bài đăng của latte_enjoyer</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/latte.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">latte_enjoyer</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">1 ngày trước</small>
+                    </div>
+                    <p class="post-excerpt">Hôm nay lần đầu tiên thử trà. Nên quay lại với latte</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 320</span>
+                        <span><i class="bi bi-eye-fill"></i> 890</span>
+                        <span><i class="bi bi-chat-fill"></i> 24</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem thử</a>
+                </div>
+            </div>
 
-        <div class="uploads">
-          <img src="assets/eek.jpg" alt="eek">
-          <h3>Bài đăng của ilikememes</h3>
-          <span class="short-desc">Just passing through.</span><br>
-          <span class="post-date">3 ngày trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/cat.jpg" class="img-fluid rounded" alt="cat">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Pets</span>
+                    <h3 class="post-title">Bài đăng của mossy</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/cat.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">mossy</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">1 ngày trước</small>
+                    </div>
+                    <p class="post-excerpt">Found a cool tie. Keeping it.</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 5k</span>
+                        <span><i class="bi bi-eye-fill"></i> 12k</span>
+                        <span><i class="bi bi-chat-fill"></i> 400</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem thử</a>
+                </div>
+            </div>
 
-        <div class="uploads">
-          <img src="assets/cherry.jpg" alt="cherry">
-          <h3>Bài đăng của cherryfan</h3>
-          <span class="short-desc">CHERRY NEEDS MORE SCREENTIME!! <br>pfp revamp soon</span><br>
-          <span class="post-date">3 ngày trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/artful.jpg" class="img-fluid rounded" alt="artful">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Thoughts</span>
+                    <h3 class="post-title">Bài đăng của ♫⋆｡♪ ₊˚♬ ﾟ.</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/artful.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">♫⋆｡♪ ₊˚♬ ﾟ.</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">1 ngày trước</small>
+                    </div>
+                    <p class="post-excerpt">Ở một mình một chút cũng ổn :,D</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 412</span>
+                        <span><i class="bi bi-eye-fill"></i> 1.1k</span>
+                        <span><i class="bi bi-chat-fill"></i> 56</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem thử</a>
+                </div>
+            </div>
 
-        <div class="uploads">
-          <img src="assets/mikuoeo.jpg" alt="mikuplush">
-          <h3>Bài đăng của vocaloidfan</h3>
-          <span class="short-desc">CONCERT SOON ??</span><br>
-          <span class="post-date">3 ngày trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/emu.jpg" class="img-fluid rounded" alt="emu">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Randoms</span>
+                    <h3 class="post-title">Bài đăng của wonderhoyer</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/emu.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">wonderhoyer</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">1 ngày trước</small>
+                    </div>
+                    <p class="post-excerpt">Wonderhoy! ✰</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 999+</span>
+                        <span><i class="bi bi-eye-fill"></i> 2.4k</span>
+                        <span><i class="bi bi-chat-fill"></i> 150</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem thử</a>
+                </div>
+            </div>
 
-        <div class="uploads">
-          <img src="assets/axlirint.jpg" alt="axlirint">
-          <h3>Bài đăng của AXEMENTIONED</h3>
-          <span class="short-desc">i eat water :D</span><br>
-          <span class="post-date">6 ngày trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
-        <div class="uploads">
-          <img src="assets/leaferboy.png" alt="leaferboy">
-          <h3>Bài đăng của leaferboy</h3>
-          <span class="short-desc">test</span><br>
-          <span class="post-date">6 ngày trước</span>
-          <a href="#" class="btn-check">Xem thử</a>
-        </div>
-      </div>
-</div>
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/axlirint.jpg" class="img-fluid rounded" alt="axlirint">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Randoms</span>
+                    <h3 class="post-title">Bài đăng của AXEMENTIONED</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/axlirint.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">AXEMENTIONED</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">2 ngày trước</small>
+                    </div>
+                    <p class="post-excerpt">Làm thế nào để đổi tên???</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 45</span>
+                        <span><i class="bi bi-eye-fill"></i> 300</span>
+                        <span><i class="bi bi-chat-fill"></i> 22</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem thử</a>
+                </div>
+            </div>
 
-<footer class="footer">
-  <div class="footer-grid">
-    <div class="footer-section">
-      <h3>MyDreams</h3>
-      <p>Nơi lưu giữ những giấc mơ, suy nghĩ và hình ảnh của bạn.</p>
-      <p>Bạn còn gì để nói nữa không?</p>
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/bocchi.jpg" class="img-fluid rounded" alt="bocchi">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Thoughts</span>
+                    <h3 class="post-title">Bài đăng của Azukiiiiiiiii!!</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/bocchi.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">Azukiiiiiiiii!!</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">2 ngày trước</small>
+                    </div>
+                    <p class="post-excerpt">Is anyone else hearing this?</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 89</span>
+                        <span><i class="bi bi-eye-fill"></i> 400</span>
+                        <span><i class="bi bi-chat-fill"></i> 14</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem thử</a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/friends.jpg" class="img-fluid rounded" alt="friends">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Randoms</span>
+                    <h3 class="post-title">Bài đăng của myfriendsareso_c00l</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/friends.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">myfriendsareso_c00l</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">2 ngày trước</small>
+                    </div>
+                    <p class="post-excerpt">Hôm nay đi chơi với các cậu thật vui!</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 320</span>
+                        <span><i class="bi bi-eye-fill"></i> 800</span>
+                        <span><i class="bi bi-chat-fill"></i> 45</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem thử</a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/sayori.jpg" class="img-fluid rounded" alt="sayori">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Thoughts</span>
+                    <h3 class="post-title">Bài đăng của soft_st4tic</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/sayori.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">soft_st4tic</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">2 ngày trước</small>
+                    </div>
+                    <p class="post-excerpt">Today is very… normal.</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 180</span>
+                        <span><i class="bi bi-eye-fill"></i> 600</span>
+                        <span><i class="bi bi-chat-fill"></i> 20</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem thử</a>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/mizuki.jpg" class="img-fluid rounded" alt="mizuki">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Randoms</span>
+                    <h3 class="post-title">Bài đăng của m1zuk1_k1nn13</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/mizuki.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">m1zuk1_k1nn13</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">2 ngày trước</small>
+                    </div>
+                    <p class="post-excerpt">Gấp hạc giấy rồi để quên trong lớp (┬┬﹏┬┬)</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 450</span>
+                        <span><i class="bi bi-eye-fill"></i> 1.2k</span>
+                        <span><i class="bi bi-chat-fill"></i> 32</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem thử</a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/pursuerms.jpg" class="img-fluid rounded" alt="mnms">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Food</span>
+                    <h3 class="post-title">Bài đăng của pursua</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/pursuerms.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">pursua</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">2 ngày trước</small>
+                    </div>
+                    <p class="post-excerpt">Ahh fresh m&ms</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 120</span>
+                        <span><i class="bi bi-eye-fill"></i> 500</span>
+                        <span><i class="bi bi-chat-fill"></i> 8</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem thử</a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="post-card">
+                    <div class="img-placeholder mb-3">
+                        <img src="assets/chuuya.jpg" class="img-fluid rounded" alt="chuuya">
+                    </div>
+                    <span class="badge bg-white mb-2 border mt-auto align-self-start" style="color:palevioletred; font-weight: lighter;">#Randoms</span>
+                    <h3 class="post-title">Bài đăng của hatrack</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/chuuya.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 30px; height: 30px; object-fit: cover;">
+                        <p class="post-meta mb-0">hatrack</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.75rem;">3 ngày trước</small>
+                    </div>
+                    <p class="post-excerpt">"Nếu thấy rát thì đừng chạm"- một bài học mà thằng bạn tôi cần biết 💔</p>
+                    <div class="d-flex gap-3 mb-3 text-muted small mt-auto">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 670</span>
+                        <span><i class="bi bi-eye-fill"></i> 2.1k</span>
+                        <span><i class="bi bi-chat-fill"></i> 55</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem thử</a>
+                </div>
+            </div>
+
+        </div>
+        <nav class="d-flex justify-content-center mt-4">
+  <ul class="pagination">
+    <li class="page-item nextpage">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item nextpage"><a class="page-link" href="#">1</a></li>
+    <li class="page-item nextpage"><a class="page-link" href="#">2</a></li>
+    <li class="page-item nextpage"><a class="page-link" href="#">3</a></li>
+    <li class="page-item nextpage">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+        </nav>
     </div>
-    <div class="footer-section">
-      <h3>Liên kết</h3>
-      <ul>
-        <li><a href="#">Chính sách bảo mật</a></li>
-        <li><a href="#">Điều khoản sử dụng</a></li>
-        <li><a href="contacts.html">Liên hệ</a></li>
-      </ul>
-    </div>
-    <div class="footer-section">
-      <h3>Theo dõi chúng tôi</h3>
-      <div class="social-icons">
-        <a href="#"><img src="icons/facebook.png" alt="Facebook"></a>
-        <a href="#"><img src="icons/twitter.png" alt="Twitter"></a>
-        <a href="#"><img src="icons/instagram.png" alt="Instagram"></a>
-        <a href="#"><img src="icons/youtube.png" alt="Youtube"></a>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 MyDreams. All rights reserved.</p>
-  </div>
-</footer>
 
-</body>
-</html>
+    <footer class="footer">
+    <div class="footer-grid">
+        <div class="footer-section">
+        <h3>MyDreams</h3>
+        <p>Nơi lưu giữ những giấc mơ, suy nghĩ và hình ảnh của bạn.</p>
+        <p>Bạn còn gì để nói nữa không?</p>
+        </div>
+        <div class="footer-section">
+        <h3>Liên kết</h3>
+        <ul>
+            <li><a href="#">Chính sách bảo mật</a></li>
+            <li><a href="#">Điều khoản sử dụng</a></li>
+            <li><a href="contacts.html">Liên hệ</a></li>
+        </ul>
+        </div>
+        <div class="footer-section">
+        <h3>Theo dõi chúng tôi</h3>
+        <div class="social-icons">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a>
+        </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 MyDreams. All rights reserved.</p>
+    </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
