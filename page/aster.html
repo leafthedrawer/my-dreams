@@ -5,144 +5,355 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bài đăng của *~✰ - MyDreams</title>
 
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Loved+by+the+King&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="dream-bg">
 
-<nav>
-    <div class="logo"><a href="../index.html">MyDreams</a></div>
-    <ul>
-        <li><a href="../index.html">Trang chủ</a></li>
-        <li><a href="../blogs.html">Blogs</a></li>
-        <li><a href="../posting.html">Đăng blog</a></li>
-        <li><a href="../library.html">Thư viện ảnh</a></li>
-        <li><a href="../contacts.html">Liên hệ</a></li>
-        <li class="login-box">
-            <a href="../login.html">Đăng nhập</a>
-            <a href="../register.html">Đăng ký</a>
-        </li>
-    </ul>
+<nav class="navbar navbar-expand-lg dream-nav">
+    <div class="container d-flex flex-column flex-lg-row align-items-center">
+        <a class="navbar-brand fw-bold text-white fs-2 mb-2 mb-lg-0" href="../index.html">MyDreams</a>
+        
+        <div class="ms-auto">
+            <ul class="navbar-nav d-flex flex-row gap-3 gap-lg-4 text-center align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="../blogs.html">
+                        <img src="../icons/blog.png" class="nav-icon" alt="Blogs">
+                        <br>
+                        <small>Blogs</small>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../posting.html">
+                        <img src="../icons/post.png" class="nav-icon" alt="Đăng bài">
+                        <br>
+                        <small>Đăng bài</small>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../library.html">
+                        <img src="../icons/lib.png" class="nav-icon" alt="Thư viện">
+                        <br>
+                        <small>Thư viện ảnh</small>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../message.html">
+                        <div class="position-relative d-inline-block">
+                        <img src="../icons/msg.png" class="nav-icon" alt="Tin nhắn">
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger shadow-sm">
+                            1
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+                        </div>
+                        <br>
+                        <small>Tin nhắn</small>
+                    </a>
+                </li>
+                
+                <li class="nav-item dropdown dream-dropdown">
+                    <a class="nav-link" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="../icons/user.png" class="nav-icon" alt="Tài khoản">
+                        <br>
+                        <small>Tài khoản</small>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg py-2 px-1" aria-labelledby="accountDropdown">
+                        <li>
+                            <a class="dropdown-item rounded mt-1" href="../register.html">
+                                <i class="bi bi-person-plus-fill me-2 text-pink"></i> Đăng ký
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item rounded" href="../login.html">
+                                <i class="bi bi-box-arrow-in-right me-2 text-pink"></i> Đăng nhập
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
-<div class="post-wrapper">
 
-  <section class="account-header">
-    <img src="../assets/Acter.jpg" class="avatar" alt="Aster">
-    <div class="account-text">
-      <h2 class="display-name">*~✰</h2>
-      <span class="username">@aster</span>
-      <p class="bio">
-        “We live in a world full of stars.<br>
-        Just be yourself and shine like one ✦”<br>
-        A x D = forever :D
-      </p>
-    </div>
-  </section>
-
-  <article class="post-card-main">
-    <img src="../assets/Aster.jpg" class="post-image" alt="Aster">
-
-    <div class="post-content">
-      <h1>Bài đăng của *~✰</h1>
-      <span class="post-meta">Giới thiệu về tớ</span>
-
-      <p>Chào mừng bạn đến với bài đăng của tớ!!</p>
-      <p>
-        Hoa Aster không chỉ đẹp mà còn mang ý nghĩa về sự kiên nhẫn
-        và tình yêu bền bỉ.
-      </p>
-      <p>
-        Nhưng thật ra… đó không phải lý do tớ tên là Aster.
-      </p>
-    <p>
-        Tớ tên Aster do kí hiệu *, trong tiếng anh là "asterisk"!
-      </p>
-      <small class="note">
-        Mọi chi tiết thêm về Aster/*~✰ xem <a href="https://real-t7.github.io/">T7's ARG</a>
-      </small>
-    </div>
-  </article>
-
-
-<section class="other-posts">
-    <h3>Bài đăng khác bởi *~✰</h3>
-
-    <div class="other-grid">
-      <a class="other-card" href="#">
-        <span class="asterisk">*</span>
-        Những hình vẽ tớ tạo
-      </a>
-
-      <a class="other-card" href="#">
-        <span class="asterisk">*</span>
-        Dusty :D
-      </a>
-    </div>
-</section>
-<div class="newly-posted">
-    <h2>Các bài đăng khác gần đây</h2>
-    <div class="grid-uploads">
-        <div class="uploads">
-            <img src="../assets/871.jpg" alt="871">
-            <h3>Bài đăng của Fern</h3>
-            <span class="short-desc">Tớ thích cây cối :P</span><br>
-            <a href='#' class="btn-check">Xem thử</a>
-        </div>        
-        <div class="uploads">
-            <img src="../assets/T7.jpg" alt="Ảnh bài đăng">
-            <h3>Bài đăng của T7</h3>
-            <span class="short-desc">...</span><br>
-            <a href='#' class="btn-check">Xem thử</a>
+<header class="container my-5 position-relative text-center">
+    <div class="ribbon-container mx-auto">
+        <img src="../icons/angelleft.gif" class="angel angel-left d-none d-md-block" alt="angel">
+        <div class="ribbon-box">
+            <h2 class="ribbon-text">Đang đọc Giới thiệu</h2>
         </div>
-        <div class="uploads">
-            <img src="../assets/762.jpg" alt="762">
-            <h3>Bài đăng của 762</h3>
-            <span class="short-desc">Em tớ kêu vào đây chơi nên uhh.. hi.</span>
-            <a href='#' class="btn-check">Xem thử</a>
+        <img src="../icons/angelright.gif" class="angel angel-right d-none d-md-block" alt="angel">
+    </div>
+</header>
+
+<div class="container py-2 mb-5">
+    
+    <div class="row g-4">
+        
+        <div class="col-lg-8">
+            <div class="post-card shadow-sm p-4 p-md-5 w-100 mb-4" style="height: auto;">
+                
+                <div class="rounded-4 overflow-hidden mb-4 shadow-sm">
+                    <img src="../assets/Aster_sketch.jpg" class="img-fluid w-100 object-fit-cover" alt="Aster" style="max-height: 400px;">
+                </div>
+
+                <div class="d-flex align-items-center mb-3 gap-2">
+                    <span class="badge rounded-pill bg-white text-pink border px-3 py-2" style="font-weight: 600; border-color: #f8badd !important;">#Introduction</span>
+                    <small class="text-muted"><i class="bi bi-clock me-1 text-pink"></i> 2 tiếng trước</small>
+                </div>
+                <h1 class="fw-bold mb-4" style="color: #5A448E; font-size: 2.5rem;">Giới thiệu</h1>
+                
+                <div class="blog-content" style="color: #8C5E9F; line-height: 1.8; font-size: 1.05rem;">
+                    <p class="fw-bold text-pink fs-5">Chào mừng bạn đến với bài đăng của tớ!!</p>
+                    
+                    <p>Hoa Aster không chỉ đẹp mà còn mang ý nghĩa về sự kiên nhẫn và tình yêu bền bỉ. :D</p>
+                    
+                    <p>Nhưng thật ra… đó không phải lý do tớ tên là Aster.</p>
+                    
+                    <p>Tớ tên Aster do kí hiệu <strong>*</strong>, trong tiếng Anh là <em>"asterisk"</em>!</p>
+                </div>
+
+                <div class="mt-5 pt-4 border-top border-pink d-flex flex-column flex-md-row justify-content-between align-items-center" style="border-color: rgba(248, 186, 221, 0.4) !important;">
+                    <small class="text-muted fst-italic mb-3 mb-md-0">
+                        Mọi chi tiết thêm về Aster/*~✰ xem <a href="https://real-t7.github.io/" class="text-pink fw-bold text-decoration-none">T7's ARG</a>
+                    </small>
+                    
+                    <div class="d-flex gap-4 fs-5" style="color: #E86A92;">
+                        <span style="cursor: pointer;"><i class="bi bi-heart-fill me-1"></i> 42</span>
+                        <span style="cursor: pointer;"><i class="bi bi-chat-fill me-1"></i> 5</span>
+                        <span style="cursor: pointer;"><i class="bi bi-share-fill me-1"></i></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="featured-container p-4 shadow-sm">
+                <div class="d-flex align-items-center justify-content-start mb-4 section-title-wrap">
+                    <h3 class="section-title fs-5 mb-0 pe-3">Bình luận (5)</h3>
+                    <div class="line"></div>
+                </div>
+
+                <div class="d-flex gap-3 mb-4">
+                    <img src="../icons/user.png" alt="Guest" class="rounded-circle border border-2 border-white shadow-sm" style="width: 40px; height: 40px; filter: invert(49%) sepia(8%) saturate(2203%) hue-rotate(242deg) brightness(88%) contrast(85%);">
+                    <div class="input-group shadow-sm rounded-pill">
+                        <input type="text" class="form-control border-0 py-2 bg-white px-4" placeholder="Viết bình luận của bạn..." style="font-size: 0.9rem; color: #8C5E9F;">
+                        <button class="btn btn-dream rounded-end-pill px-4" type="button"><i class="bi bi-send-fill"></i></button>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column gap-3">
+                    
+                    <div class="d-flex gap-3">
+                        <img src="../assets/T7.jpg" alt="T7" class="rounded-circle border border-2 border-white shadow-sm object-fit-cover" style="width: 40px; height: 40px;">
+                        <div class="bg-white bg-opacity-50 p-3 rounded-4 border border-pink w-100" style="border-color: rgba(248, 186, 221, 0.4) !important;">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <span class="fw-bold text-pink" style="font-size: 0.9rem;">T7</span>
+                                <small class="text-muted" style="font-size: 0.75rem;">1 tiếng trước</small>
+                            </div>
+                            <p class="mb-0" style="color: #8C5E9F; font-size: 0.9rem;">h</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3">
+                        <img src="../assets/TC.png" alt="cone" class="rounded-circle border border-2 border-white shadow-sm object-fit-cover" style="width: 40px; height: 40px;">
+                        <div class="bg-white bg-opacity-50 p-3 rounded-4 border border-pink w-100" style="border-color: rgba(248, 186, 221, 0.4) !important;">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <span class="fw-bold text-pink" style="font-size: 0.9rem;">cone</span>
+                                <small class="text-muted" style="font-size: 0.75rem;">1 tiếng trước</small>
+                            </div>
+                            <p class="mb-0" style="color: #8C5E9F; font-size: 0.9rem;">cậu cx trên MyDreams à?</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3">
+                        <img src="../assets/cat.jpg" alt="mossy" class="rounded-circle border border-2 border-white shadow-sm object-fit-cover" style="width: 40px; height: 40px;">
+                        <div class="bg-white bg-opacity-50 p-3 rounded-4 border border-pink w-100" style="border-color: rgba(248, 186, 221, 0.4) !important;">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <span class="fw-bold text-pink" style="font-size: 0.9rem;">mossy</span>
+                                <small class="text-muted" style="font-size: 0.75rem;">45 phút trước</small>
+                            </div>
+                            <p class="mb-0" style="color: #8C5E9F; font-size: 0.9rem;">hiii asterisk! hoa đẹp quá :3</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3">
+                        <img src="../assets/871.jpg" alt="ferniestboy" class="rounded-circle border border-2 border-white shadow-sm object-fit-cover" style="width: 40px; height: 40px;">
+                        <div class="bg-white bg-opacity-50 p-3 rounded-4 border border-pink w-100" style="border-color: rgba(248, 186, 221, 0.4) !important;">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <span class="fw-bold text-pink" style="font-size: 0.9rem;">ferniestboy</span>
+                                <small class="text-muted" style="font-size: 0.75rem;">30 phút trước</small>
+                            </div>
+                            <p class="mb-0" style="color: #8C5E9F; font-size: 0.9rem;">Chào mừng cậu đến với MyDreams nha!</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3">
+                        <img src="../assets/sayori.jpg" alt="soft_st4tic" class="rounded-circle border border-2 border-white shadow-sm object-fit-cover" style="width: 40px; height: 40px;">
+                        <div class="bg-white bg-opacity-50 p-3 rounded-4 border border-pink w-100" style="border-color: rgba(248, 186, 221, 0.4) !important;">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <span class="fw-bold text-pink" style="font-size: 0.9rem;">soft_st4tic</span>
+                                <small class="text-muted" style="font-size: 0.75rem;">Vừa xong</small>
+                            </div>
+                            <p class="mb-0" style="color: #8C5E9F; font-size: 0.9rem;">hellooo, tớ cũng thích hoa aster lắm á</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 d-flex flex-column gap-4">
+            
+            <div class="featured-container p-4 shadow-sm text-center">
+                <img src="../assets/Acter.jpg" alt="Aster Avatar" class="rounded-circle border border-4 border-white shadow-sm mb-3 object-fit-cover" style="width: 120px; height: 120px;">
+                <h3 class="fw-bold fs-4 mb-0" style="color: #5A448E;">*~✰</h3>
+                <small class="text-pink fw-bold d-block mb-3">@aster</small>
+                
+                <p class="small text-muted fst-italic px-2 mb-4" style="line-height: 1.6;">
+                    “We live in a world full of stars.<br>
+                    Just be yourself and shine like one ✦”<br>
+                </p>
+
+                <div class="d-flex gap-2">
+                    <button class="btn btn-dream w-50 rounded-pill py-2 fw-bold shadow-sm"><i class="bi bi-person-plus-fill me-1"></i> Kết bạn</button>
+                    <button class="btn btn-outline-dream w-50 rounded-pill py-2 fw-bold shadow-sm">Theo dõi</button>
+                </div>
+            </div>
+
+            <div class="featured-container p-4 shadow-sm">
+                <div class="d-flex align-items-center justify-content-start mb-3 section-title-wrap">
+                    <h3 class="section-title fs-5 mb-0 pe-3">Bài đăng khác</h3>
+                    <div class="line"></div>
+                </div>
+
+                <div class="list-group list-group-flush gap-2">
+                    <a href="#" class="list-group-item list-group-item-action bg-white bg-opacity-50 border border-pink rounded-3 p-3 text-decoration-none d-flex align-items-center" style="border-color: rgba(248, 186, 221, 0.5) !important;">
+                        <i class="bi bi-asterisk text-pink fs-4 me-3" style="animation: spin 4s linear infinite;"></i>
+                        <span class="fw-bold text-muted small" style="color: #8C5E9F !important;">Những hình vẽ tớ tạo</span>
+                    </a>
+                    
+                    <a href="#" class="list-group-item list-group-item-action bg-white bg-opacity-50 border border-pink rounded-3 p-3 text-decoration-none d-flex align-items-center" style="border-color: rgba(248, 186, 221, 0.5) !important;">
+                        <i class="bi bi-asterisk text-pink fs-4 me-3" style="animation: spin 4s linear infinite;"></i>
+                        <span class="fw-bold text-muted small" style="color: #8C5E9F !important;">Dusty :D</span>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </div>
+
+    <div class="mt-5">
+        <div class="d-flex align-items-center justify-content-center mb-4 section-title-wrap">
+            <div class="line"></div>
+            <h2 class="mx-3 section-title">Có thể bạn sẽ thích</h2>
+            <div class="line"></div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="post-card post-card-sm d-flex flex-column">
+                    <div class="img-placeholder mb-2">
+                        <img src="../assets/871.jpg" class="img-fluid rounded" alt="871">
+                    </div>
+                    <span class="badge bg-white text-pink border mb-1 align-self-start px-2 py-1" style="font-weight: 600; font-size: 0.65rem; border-color: #f8badd !important;">#Opinion</span>
+                    <h4 class="post-title fs-5 mb-1">Ý kiến về cây</h4>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="../assets/871.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 25px; height: 25px; object-fit: cover;">
+                        <p class="post-meta mb-0" style="font-size: 0.75rem;">ferniestboy</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.65rem;">4 tiếng trước</small>
+                    </div>
+                    <p class="post-excerpt small mb-2">Tớ thích cây cối :P.</p>
+                    
+                    <div class="d-flex gap-3 mb-3 text-muted mt-auto" style="font-size: 0.75rem;">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 15</span>
+                        <span><i class="bi bi-eye-fill"></i> 89</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream w-100">Xem bài</a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="post-card post-card-sm d-flex flex-column">
+                    <div class="img-placeholder mb-2">
+                        <img src="../assets/T7.jpg" class="img-fluid rounded" alt="T7">
+                    </div>
+                    <span class="badge bg-white text-pink border mb-1 align-self-start px-2 py-1" style="font-weight: 600; font-size: 0.65rem; border-color: #f8badd !important;">#Randoms</span>
+                    <h4 class="post-title fs-5 mb-1">untitled</h4>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="../assets/T7.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 25px; height: 25px; object-fit: cover;">
+                        <p class="post-meta mb-0" style="font-size: 0.75rem;">T7</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.65rem;">4 tiếng trước</small>
+                    </div>
+                    <p class="post-excerpt small mb-2">...</p>
+                    
+                    <div class="d-flex gap-3 mb-3 text-muted mt-auto" style="font-size: 0.75rem;">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 7</span>
+                        <span><i class="bi bi-eye-fill"></i> 45</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream w-100">Xem bài</a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="post-card post-card-sm d-flex flex-column">
+                    <div class="img-placeholder mb-2">
+                        <img src="../assets/Twins_bondingtime.png" class="img-fluid rounded" alt="762">
+                    </div>
+                    <span class="badge bg-white text-pink border mb-1 align-self-start px-2 py-1" style="font-weight: 600; font-size: 0.65rem; border-color: #f8badd !important;">#Randoms</span>
+                    <h4 class="post-title fs-5 mb-1">Hour of joy</h4>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="../assets/762.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 25px; height: 25px; object-fit: cover;">
+                        <p class="post-meta mb-0" style="font-size: 0.75rem;">S-762</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.65rem;">12 tiếng trước</small>
+                    </div>
+                    <p class="post-excerpt small mb-2">My sister annoyed me...</p>
+
+                    <div class="d-flex gap-3 mb-3 text-muted mt-auto" style="font-size: 0.75rem;">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 34</span>
+                        <span><i class="bi bi-eye-fill"></i> 112</span>
+                    </div>
+                    <a href='#' class="btn btn-sm btn-dream w-100">Xem bài</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
-</div>
+
 <footer class="footer">
   <div class="footer-grid">
-
     <div class="footer-section">
       <h3>MyDreams</h3>
       <p>Nơi lưu giữ những giấc mơ, suy nghĩ và hình ảnh của bạn.</p>
       <p class="footer-note">Bạn còn gì để nói nữa không?</p>
     </div>
-
     <div class="footer-section">
       <h3>Liên kết</h3>
       <ul>
         <li><a href="#">Chính sách bảo mật</a></li>
-        <li><a href="#">Điều khoản sử dụng</a></li>
+        <li><a href="../arg/spread.html">Điều khoản sử dụng</a></li>
         <li><a href="../contacts.html">Liên hệ</a></li>
       </ul>
     </div>
-
     <div class="footer-section">
       <h3>Theo dõi chúng tôi</h3>
       <div class="social-icons">
-        <a href="#"><img src="../icons/facebook.png"></a>
-        <a href="#"><img src="../icons/twitter.png"></a>
-        <a href="#"><img src="../icons/instagram.png"></a>
-        <a href="#"><img src="../icons/youtube.png"></a>
+        <a href="#"><img src="../icons/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="../icons/twitter.png" alt="Twitter"></a>
+        <a href="#"><img src="../icons/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="../icons/youtube.png" alt="Youtube"></a>
       </div>
     </div>
-
   </div>
-
   <div class="footer-bottom">
-    &copy; 2025 MyDreams. All rights reserved.
+    <p>&copy; 2025 MyDreams. All rights reserved.</p>
   </div>
 </footer>
 
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+</html> 

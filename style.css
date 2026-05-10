@@ -22,7 +22,29 @@ body::after {
     z-index: 9999;
     animation: sparkleFloat 4s ease-in-out infinite;
 }
+.chat-pill {
+    background-color: transparent;
+    color: #8C5E9F;
+    transition: all 0.3s ease;
+}
 
+.chat-pill:hover {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    transform: translateX(4px);
+}
+
+.chat-pill.active {
+    background-color: #ffdeeb !important;
+    color: #E86A92 !important;
+    border-left: 4px solid #E86A92 !important;
+    border-radius: 0 1rem 1rem 0 !important;
+}
+
+
+.navbar-nav .badge {
+    transform: translate(-30%, 20%);
+    font-size: 0.6rem;
+}
 @keyframes sparkleFloat {
     0%, 100% { 
         transform: translateY(0) scale(1); 
@@ -468,7 +490,7 @@ body::after {
     height: auto !important;
 }
 
-/* --- FOOTER --- */
+
 .footer {
     background-color: #E86A92;
     color: #ffffff;
