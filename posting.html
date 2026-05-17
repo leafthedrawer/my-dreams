@@ -79,7 +79,24 @@
         </div>
     </div>
 </nav>
-
+<div class="modal" id="noAccountModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Uh oh!!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p> Bạn không có tài khoản :C</p>
+        <p> Hãy đăng ký một tài khoản để có thể đăng bài và kết nối với mọi người nhé!! :D</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a href='register.html' class="btn btn-sm btn-dream mt-auto align-self-start w-100">Đăng ký ngay</a>
+      </div>
+    </div>
+  </div>
+</div>
 <header class="container my-5 position-relative text-center">
     <div class="ribbon-container mx-auto">
         <img src="icons/angelleft.gif" class="angel angel-left d-none d-md-block" alt="angel">
@@ -92,46 +109,96 @@
 
 <div class="container py-2 mb-5">
     
-    <div class="featured-container p-4 p-md-5 mb-5 shadow-sm">
-        <div class="d-flex align-items-center justify-content-center mb-4 section-title-wrap">
-            <div class="line"></div>
-            <h2 class="mx-3 section-title">Tạo Bài Đăng Mới</h2>
-            <div class="line"></div>
+    <div class="row g-4 mb-5">
+        
+        <div class="col-lg-7 col-xl-8">
+            <div class="featured-container p-4 p-md-5 shadow-sm h-100">
+                <div class="d-flex align-items-center justify-content-start mb-4 section-title-wrap">
+                    <h2 class="section-title mb-0 pe-3">Tạo Bài Đăng Mới</h2>
+                    <div class="line"></div>
+                </div>
+
+                <form class="row g-4 mt-2">
+                    
+                    <div class="col-xl-5 col-lg-12 col-md-6 d-flex flex-column">
+                        <label for="imageUpload" class="upload-area flex-grow-1 border border-2 border-dashed rounded-4 d-flex flex-column justify-content-center align-items-center p-4 text-center w-100" style="min-height: 250px;">
+                            <i class="bi bi-cloud-arrow-up display-4 text-pink mb-2"></i>
+                            <span class="fw-bold mb-1" style="color: #E86A92; font-size: 1.1rem;">Tải ảnh lên</span>
+                            <small class="text-muted" style="font-size: 0.8rem;">Nhấn để chọn ảnh</small>
+                            <input type="file" id="imageUpload" class="d-none" accept="image/*" required>
+                        </label>
+                    </div>
+
+                    <div class="col-xl-7 col-lg-12 col-md-6 d-flex flex-column gap-3">
+                        
+                        <div>
+                            <input type="text" id="postTitle" class="form-control dream-input px-4 py-3 rounded-4 fw-bold" placeholder="Tiêu đề bài viết *" required>
+                        </div>
+                        
+                        <div class="flex-grow-1">
+                            <textarea id="postContent" class="form-control dream-input px-4 py-3 rounded-4 h-100" rows="5" placeholder="Hôm nay bạn muốn chia sẻ điều gì? *" required style="resize: none;"></textarea>
+                        </div>
+
+                        <div class="input-group">
+                            <span class="input-group-text bg-transparent border-pink text-pink rounded-start-4 ps-4"><i class="bi bi-hash"></i></span>
+                            <input type="text" id="postTags" class="form-control dream-input px-3 py-2 border-start-0 rounded-end-4" placeholder="Thẻ tag (VD: nhatky, random)">
+                        </div>
+
+                        <div class="p-3 mt-1 rounded-4 border border-pink bg-white bg-opacity-50" style="border-color: rgba(248, 186, 221, 0.5) !important;">
+                            <label class="form-label small fw-bold text-pink mb-2 d-block"><i class="bi bi-palette-fill me-1"></i> Theme</label>
+                            <div class="d-flex flex-wrap gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input theme-selector" type="radio" name="themeColor" id="themePink" value="theme-pink" checked>
+                                    <label class="form-check-label small" for="themePink">Default</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input theme-selector" type="radio" name="themeColor" id="themeBlue" value="theme-blue">
+                                    <label class="form-check-label small" for="themeBlue">Xanh dương</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input theme-selector" type="radio" name="themeColor" id="themeGreen" value="theme-green">
+                                    <label class="form-check-label small" for="themeGreen">Xanh lá</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-dream btn-lg rounded-pill mt-2 py-2 w-100 fw-bold shadow-sm" data-bs-toggle="modal" data-bs-target="#noAccountModal">Đăng bài ngay!</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
-        <form class="row g-4 align-items-stretch mt-2">
-            
-            <div class="col-lg-5">
-                <label for="imageUpload" class="upload-area h-100 border border-2 border-dashed rounded-4 d-flex flex-column justify-content-center align-items-center p-5 text-center w-100" style="min-height: 350px;">
-                    <i class="bi bi-cloud-arrow-up display-1 text-pink mb-3"></i>
-                    <span class="fw-bold mb-2" style="color: #E86A92; font-size: 1.2rem;">Tải ảnh lên</span>
-                    <small class="text-muted">Nhấn để chọn ảnh từ thiết bị của bạn</small>
-                    <input type="file" id="imageUpload" class="d-none" accept="image/*" required>
-                </label>
+        <div class="col-lg-5 col-xl-4 d-flex flex-column">
+            <div class="featured-container p-4 shadow-sm h-100 d-flex flex-column align-items-center justify-content-center">
+                <div class="d-flex align-items-center justify-content-center w-100 mb-4 section-title-wrap">
+                    <div class="line"></div>
+                    <h3 class="mx-3 section-title fs-5 mb-0">Xem trước</h3>
+                    <div class="line"></div>
+                </div>
+
+                <div id="previewCard" class="post-card d-flex flex-column theme-pink shadow-lg w-100" style="max-width: 350px; height: auto; min-height: 420px; transition: all 0.3s ease; padding: 18px;">
+                    <div class="img-placeholder mb-2">
+                        <img id="previewImage" src="assets/space.jpg" class="img-fluid rounded" alt="Preview">
+                    </div>
+                    <span id="previewTag" class="badge bg-white text-pink border mb-1 align-self-start px-2 py-1" style="font-weight: 600; font-size: 0.65rem; border-color: #f8badd !important;">#Tag</span>
+                    <h4 id="previewTitleText" class="post-title fs-5 mb-1" style="font-size: 1.25rem;">Tiêu đề bài viết</h4>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="icons/user.png" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white bg-white object-fit-cover" style="width: 25px; height: 25px;">
+                        <p class="post-meta mb-0" style="font-size: 0.75rem;">Bạn</p>
+                        <small class="text-muted ms-auto" style="font-size: 0.65rem;">Vừa xong</small>
+                    </div>
+                    <p id="previewContentText" class="post-excerpt small mb-2" style="-webkit-line-clamp: 3;">Nội dung bài viết sẽ hiển thị ở đây. Hãy nhập nội dung ở phía trên để xem trước nhé!</p>
+                    
+                    <div class="d-flex gap-3 mb-3 text-muted mt-auto" style="font-size: 0.75rem;">
+                        <span><i class="bi bi-heart-fill text-pink"></i> 0</span>
+                        <span><i class="bi bi-eye-fill"></i> 0</span>
+                        <span><i class="bi bi-chat-fill"></i> 0</span>
+                    </div>
+                    <button class="btn btn-sm btn-dream mt-auto align-self-start w-100" disabled>Xem bài</button>
+                </div>
             </div>
+        </div>
 
-            <div class="col-lg-7 d-flex flex-column gap-3">
-                
-                <div>
-                    <input type="text" class="form-control dream-input px-4 py-3 rounded-4 fw-bold" placeholder="Tiêu đề bài viết *" required>
-                </div>
-                
-                <div class="flex-grow-1">
-                    <textarea class="form-control dream-input px-4 py-3 rounded-4 h-100" rows="6" placeholder="Hôm nay bạn muốn chia sẻ điều gì? *" required style="resize: none;"></textarea>
-                </div>
-
-                <div>
-                    <input type="text" class="form-control dream-input px-4 py-2 rounded-4" placeholder="Mô tả ngắn gọn (Tuỳ chọn)">
-                </div>
-
-                <div class="input-group">
-                    <span class="input-group-text bg-transparent border-pink text-pink rounded-start-4 ps-4"><i class="bi bi-hash"></i></span>
-                    <input type="text" class="form-control dream-input px-3 py-2 border-start-0 rounded-end-4" placeholder="Thẻ tag (VD: nhatky, random, kyniem)">
-                </div>
-
-                <button type="submit" class="btn btn-dream btn-lg rounded-pill mt-3 py-2 w-100 fw-bold fs-5 shadow-sm">Đăng bài ngay 🚀</button>
-            </div>
-        </form>
     </div>
 
     <div class="featured-container p-4 p-md-5 mb-5 shadow-sm">
@@ -146,7 +213,6 @@
                 
                 <div class="carousel-item active">
                     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-                        
                         <div class="col">
                             <div class="post-card post-card-sm d-flex flex-column">
                                 <div class="img-placeholder mb-2">
@@ -166,7 +232,7 @@
                                     <span><i class="bi bi-eye-fill"></i> 128</span>
                                     <span><i class="bi bi-chat-fill"></i> 5</span>
                                 </div>
-                                <a href='page/aster.html' class="btn btn-sm btn-dream mt-auto align-self-start">Xem bài</a>
+                                <a href='page/aster.html' class="btn btn-sm btn-dream mt-auto align-self-start w-100">Xem bài</a>
                             </div>
                         </div>
 
@@ -189,7 +255,7 @@
                                     <span><i class="bi bi-eye-fill"></i> 89</span>
                                     <span><i class="bi bi-chat-fill"></i> 2</span>
                                 </div>
-                                <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem bài</a>
+                                <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start w-100">Xem bài</a>
                             </div>
                         </div>
 
@@ -212,7 +278,7 @@
                                     <span><i class="bi bi-eye-fill"></i> 45</span>
                                     <span><i class="bi bi-chat-fill"></i> 0</span>
                                 </div>
-                                <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem bài</a>
+                                <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start w-100">Xem bài</a>
                             </div>
                         </div>
 
@@ -235,122 +301,16 @@
                                     <span><i class="bi bi-eye-fill"></i> 540</span>
                                     <span><i class="bi bi-chat-fill"></i> 12</span>
                                 </div>
-                                <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem bài</a>
+                                <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start w-100">Xem bài</a>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="carousel-item">
-                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-                        
-                        <div class="col">
-                            <div class="post-card post-card-sm d-flex flex-column">
-                                <div class="img-placeholder mb-2">
-                                    <img src="assets/Twins_bondingtime.png" class="img-fluid rounded" alt="762">
-                                </div>
-                                <span class="badge bg-white text-pink border mb-1 align-self-start px-2 py-1" style="font-weight: 600; font-size: 0.65rem;">#Randoms</span>
-                                <h4 class="post-title fs-5 mb-1">Hour of joy</h4>
-                                <div class="d-flex align-items-center mb-2">
-                                    <img src="assets/762.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 25px; height: 25px; object-fit: cover;">
-                                    <p class="post-meta mb-0" style="font-size: 0.75rem;">S-762</p>
-                                    <small class="text-muted ms-auto" style="font-size: 0.65rem;">12 tiếng trước</small>
-                                </div>
-                                <p class="post-excerpt small mb-2">My sister annoyed me...</p>
-
-                                <div class="d-flex gap-3 mb-3 text-muted mt-auto" style="font-size: 0.75rem;">
-                                    <span><i class="bi bi-heart-fill text-pink"></i> 34</span>
-                                    <span><i class="bi bi-eye-fill"></i> 112</span>
-                                    <span><i class="bi bi-chat-fill"></i> 4</span>
-                                </div>
-                                <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem bài</a>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="post-card post-card-sm d-flex flex-column">
-                                <div class="img-placeholder mb-2">
-                                    <img src="assets/curtains.jpg" class="img-fluid rounded" alt="curtains">
-                                </div>
-                                <span class="badge bg-white text-pink border mb-1 align-self-start px-2 py-1" style="font-weight: 600; font-size: 0.65rem;">#Announcements</span>
-                                <h4 class="post-title fs-5 mb-1">Magic Show</h4>
-                                <div class="d-flex align-items-center mb-2">
-                                    <img src="assets/artful.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 25px; height: 25px; object-fit: cover;">
-                                    <p class="post-meta mb-0" style="font-size: 0.75rem;">♫⋆｡♪ ₊˚♬ ﾟ.</p>
-                                    <small class="text-muted ms-auto" style="font-size: 0.65rem;">13 tiếng trước</small>
-                                </div>
-                                <p class="post-excerpt small mb-2">Will be in theatres soon!</p>
-
-                                <div class="d-flex gap-3 mb-3 text-muted mt-auto" style="font-size: 0.75rem;">
-                                    <span><i class="bi bi-heart-fill text-pink"></i> 500+</span>
-                                    <span><i class="bi bi-eye-fill"></i> 1.2k</span>
-                                    <span><i class="bi bi-chat-fill"></i> 87</span>
-                                </div>
-                                <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem bài</a>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="post-card post-card-sm d-flex flex-column">
-                                <div class="img-placeholder mb-2">
-                                    <img src="assets/TC.png" class="img-fluid rounded" alt="TC">
-                                </div>
-                                <span class="badge bg-white text-pink border mb-1 align-self-start px-2 py-1" style="font-weight: 600; font-size: 0.65rem;">#Randoms</span>
-                                <h4 class="post-title fs-5 mb-1">Bài của cone</h4>
-                                <div class="d-flex align-items-center mb-2">
-                                    <img src="assets/TC.png" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 25px; height: 25px; object-fit: cover;">
-                                    <p class="post-meta mb-0" style="font-size: 0.75rem;">cone</p>
-                                    <small class="text-muted ms-auto" style="font-size: 0.65rem;">12 tiếng trước</small>
-                                </div>
-                                <p class="post-excerpt small mb-2">traffic cones works</p>
-
-                                <div class="d-flex gap-3 mb-3 text-muted mt-auto" style="font-size: 0.75rem;">
-                                    <span><i class="bi bi-heart-fill text-pink"></i> 56</span>
-                                    <span><i class="bi bi-eye-fill"></i> 200</span>
-                                    <span><i class="bi bi-chat-fill"></i> 1</span>
-                                </div>
-                                <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem bài</a>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="post-card post-card-sm d-flex flex-column">
-                                <div class="img-placeholder mb-2">
-                                    <img src="assets/bocchi.jpg" class="img-fluid rounded" alt="bocchi">
-                                </div>
-                                <span class="badge bg-white text-pink border mb-1 align-self-start px-2 py-1" style="font-weight: 600; font-size: 0.65rem;">#Thoughts</span>
-                                <h4 class="post-title fs-5 mb-1">Azukiiiiiiiii!!</h4>
-                                <div class="d-flex align-items-center mb-2">
-                                    <img src="assets/bocchi.jpg" alt="PFP" class="rounded-circle me-2 shadow-sm border border-2 border-white" style="width: 25px; height: 25px; object-fit: cover;">
-                                    <p class="post-meta mb-0" style="font-size: 0.75rem;">Azukiiiiiiiii!!</p>
-                                    <small class="text-muted ms-auto" style="font-size: 0.65rem;">2 ngày trước</small>
-                                </div>
-                                <p class="post-excerpt small mb-2">Is anyone else hearing this?</p>
-
-                                <div class="d-flex gap-3 mb-3 text-muted mt-auto" style="font-size: 0.75rem;">
-                                    <span><i class="bi bi-heart-fill text-pink"></i> 89</span>
-                                    <span><i class="bi bi-eye-fill"></i> 400</span>
-                                    <span><i class="bi bi-chat-fill"></i> 14</span>
-                                </div>
-                                <a href='#' class="btn btn-sm btn-dream mt-auto align-self-start">Xem bài</a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
+                
             </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#recommendedCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#recommendedCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
     </div>
+
 </div>
 
 <footer class="footer">
@@ -371,10 +331,10 @@
     <div class="footer-section">
       <h3>Theo dõi chúng tôi</h3>
       <div class="social-icons">
-        <a href="#"><i class="bi bi-facebook"></i></a>
-        <a href="#"><i class="bi bi-twitter"></i></a>
-        <a href="#"><i class="bi bi-instagram"></i></a>
-        <a href="#"><i class="bi bi-youtube"></i></a>
+        <a href="#"><img src="icons/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="icons/twitter.png" alt="Twitter"></a>
+        <a href="#"><img src="icons/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="icons/youtube.png" alt="Youtube"></a>
       </div>
     </div>
   </div>
@@ -384,5 +344,47 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const titleInput = document.getElementById("postTitle");
+        const contentInput = document.getElementById("postContent");
+        const tagsInput = document.getElementById("postTags");
+        const imageUpload = document.getElementById("imageUpload");
+        
+        const previewTitle = document.getElementById("previewTitleText");
+        const previewContent = document.getElementById("previewContentText");
+        const previewTag = document.getElementById("previewTag");
+        const previewImage = document.getElementById("previewImage");
+        const previewCard = document.getElementById("previewCard");
+
+        titleInput.addEventListener("input", (e) => {
+            previewTitle.textContent = e.target.value || "Tiêu đề bài viết";
+        });
+
+        contentInput.addEventListener("input", (e) => {
+            previewContent.textContent = e.target.value || "Nội dung bài viết sẽ hiển thị ở đây. Hãy nhập nội dung ở phía trên để xem trước nhé!";
+        });
+
+        tagsInput.addEventListener("input", (e) => {
+            previewTag.textContent = e.target.value ? "#" + e.target.value.replace(/#/g, '') : "#Tag";
+        });
+
+        imageUpload.addEventListener("change", function() {
+            if (this.files && this.files[0]) {
+                previewImage.src = URL.createObjectURL(this.files[0]);
+            }
+        });
+
+        const themeSelectors = document.querySelectorAll('.theme-selector');
+        themeSelectors.forEach(selector => {
+            selector.addEventListener('change', (e) => {
+                previewCard.classList.remove('theme-pink', 'theme-blue', 'theme-green');
+                previewCard.classList.add(e.target.value);
+            });
+        });
+    });
+</script>
+
 </body>
 </html>
